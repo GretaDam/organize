@@ -1,6 +1,6 @@
 <header>
     <div class="logo">
-        <img src="./assets/img/logo.png">
+        <img src="{{asset('assets/img/logo.png')}}" alt="Logo Organize">
     </div>
     <div class="headBar"></div>
 </header>

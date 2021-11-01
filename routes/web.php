@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('homepage');
+Route::get('/', [PageController::class, 'home'])->name('homepage');
 
-Route::get('/se-connecter', function () {
-    return view('user_connect');
-})->name('connectpage');
+Route::get('/se-connecter', [PageController::class, 'userConnect'])->name('connectpage');
 
-Route::get('/creation-compte', function () {
-    return view('user_create');
-})->name('usercreatepage');
+Route::get('/creation-compte', [PageController::class, 'userCreate'])->name('usercreatepage');
