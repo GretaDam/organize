@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;900&display=swap');
+
+* {
+    font-family: "Nunito";
+}
+
+@mixin semiBold12 {
+    font-weight: 600;
+    font-size: 12px;
+}
+
+@mixin semiBold16 {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+@mixin semiBold24 {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+@mixin black16 {
+    font-weight: 900;
+    font-size: 16px;
+}
+
+@mixin black24 {
+    font-weight: 900;
+    font-size: 24px;
+}
+
+@mixin black48 {
+    font-weight: 900;
+    font-size: 48px;
+}

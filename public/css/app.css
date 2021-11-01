@@ -1,0 +1,282 @@
+@import url(https://fonts.googleapis.com/css2?family=Nunito:wght@600;900&display=swap);
+* {
+  font-family: "Nunito";
+}
+
+a {
+  text-decoration: none;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+button {
+  margin: 0;
+  border: 0;
+  border-radius: 12px;
+}
+
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  color: #E4F7FF;
+  background-color: #3ec5ff;
+  box-shadow: 0px 2px 4px rgba(62, 197, 255, 0.25);
+}
+
+.dNone {
+  display: none;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  background-color: #FAFDFF;
+}
+body header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5px;
+}
+body header .logo {
+  width: 160px;
+}
+body header .headBar {
+  width: 300px;
+  height: 2px;
+  background-color: #3ec5ff;
+  box-shadow: 0px 2px 4px rgba(62, 197, 255, 0.25);
+}
+body nav {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+body nav .navBtn {
+  width: 46px;
+  height: 46px;
+}
+body nav a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: 600;
+  font-size: 12px;
+}
+body nav .addTask a {
+  color: #3ec5ff;
+}
+body nav .logOut a {
+  color: #FF3E3E;
+}
+body main #presentation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  padding: 10px;
+  text-align: center;
+}
+body main #presentation h1 {
+  font-weight: 900;
+  font-size: 24px;
+}
+body main #presentation p {
+  font-weight: 600;
+  font-size: 16px;
+}
+body main #index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+body main #index .indexButton {
+  width: 240px;
+  margin: 45px;
+}
+body main #index .indexButton a {
+  background-color: #3ec5ff;
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0px 2px 4px rgba(62, 197, 255, 0.25);
+}
+body main #index .indexButton a:hover {
+  background-color: #E4F7FF;
+  color: #111;
+  box-shadow: 0px 2px 4px rgba(228, 247, 255, 0.25);
+}
+body main #listTitle {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main #listTitle p {
+  color: #111;
+  font-weight: 600;
+  font-size: 12px;
+  margin: 0;
+}
+body main .listBar {
+  width: 330px;
+  height: 2px;
+  background-color: #111;
+  box-shadow: 0px 2px 4px rgba(17, 17, 17, 0.25);
+}
+body main .navList {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 330px;
+}
+body main .navList li {
+  list-style: none;
+}
+body main .navList li a {
+  color: #111;
+  font-weight: 600;
+  font-size: 12px;
+}
+body main .check {
+  width: 10%;
+}
+body main .task {
+  width: 50%;
+  text-align: center;
+}
+body main .priority {
+  width: 10%;
+  text-align: center;
+}
+body main .endDate {
+  width: 30%;
+  text-align: end;
+}
+body main .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+body main .container .alert {
+  color: #FF3E3E;
+}
+body main .container form {
+  width: 320px;
+}
+body main .container form .btn {
+  font-weight: 600;
+  font-size: 12px;
+}
+body main .container form .inputSubmit {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+body main .container form .inputButton, body main .container form .formInput {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+body main .container form .formInput {
+  font-weight: 600;
+  font-size: 12px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+body main .container form .formInput label {
+  margin: 5px;
+}
+body main .container form .formInput input, body main .container form .formInput select, body main .container form .formInput textarea {
+  padding: 10px;
+  border: none;
+  background-color: #E4F7FF;
+  color: #111;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 12px;
+  flex: 1;
+}
+body main .container form .area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+body main .container form .area textarea {
+  width: 100%;
+  resize: none;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    width: 60%;
+  }
+  body header {
+    margin-top: 10px;
+  }
+  body nav a {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  body main #presentation h1 {
+    font-weight: 900;
+    font-size: 48px;
+  }
+  body main #presentation p {
+    font-weight: 600;
+    font-size: 24px;
+  }
+  body main #index .indexButton a {
+    font-weight: 600;
+    font-size: 24px;
+  }
+  body main #listTitle p {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  body main .listBar {
+    width: 860px;
+  }
+  body main .navList {
+    width: 860px;
+  }
+  body main .navList li a {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  body main .container form {
+    width: 640px;
+  }
+  body main .container form .btn {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  body main .container form .formInput {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  body main .container form .formInput input, body main .container form .formInput select, body main .container form .formInput textarea {
+    font-weight: 600;
+    font-size: 16px;
+  }
+}

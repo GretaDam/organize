@@ -1,0 +1,297 @@
+@import 'partials/colors', 'partials/typos', 'partials/utilities';
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0 auto;
+    background-color: $background;
+
+    header {
+        @include flexColumnCenter;
+        margin-top:5px;
+        
+        .logo {
+            width: 160px;
+        }
+
+        .headBar {
+            width: 300px;
+            height:2px;
+            background-color: $primary;
+            box-shadow: 0px 2px 4px $primaryShadow;
+        }
+    }
+    
+    nav {
+        padding: 20px;
+        @include flexRow;
+        justify-content: space-between;
+        .navBtn {
+            width: 46px;
+            height: 46px;
+        }
+
+        a {
+            @include flexRow;
+            align-items: center;
+            @include semiBold12;
+        }
+        .addTask a{
+            color: $primary;
+        }
+        .logOut a{
+            color: $red;
+        }
+    }
+
+    main {
+
+        #presentation {
+            @include flexColumnCenter;
+            margin-top: 50px;
+            padding:10px;
+            text-align: center;
+            h1 {
+                @include black24;
+                
+            }
+            p {
+                @include semiBold16;
+            }
+        }
+
+        #index {
+            @include flexColumnCenter;
+            margin-top:30px;
+            
+            .indexButton {
+                width: 240px;
+                margin: 45px; 
+
+                a {
+                    background-color: $primary;                   
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    color:white;
+                    @include semiBold16;
+                    padding: 10px;
+                    border-radius: 12px;
+                    box-shadow: 0px 2px 4px $primaryShadow;
+                }
+                a:hover {
+                    background-color: $secondary;
+                    color:$bgrey;
+                    box-shadow: 0px 2px 4px $secondaryShadow; 
+                }
+            }
+        }
+        
+        #listTitle {
+            margin-top:30px;
+            @include flexColumnCenter;
+            p {
+                color:$bgrey;
+                @include semiBold12;
+                margin:0;
+            }
+        }
+
+        .listBar {
+            width: 330px;
+            height:2px;
+            background-color: $bgrey;
+            box-shadow: 0px 2px 4px $bgreyShadow;
+        }
+        
+        .navList {
+            @include flexRowCenter;
+            margin:0;
+            padding:0;
+            width: 330px;
+            li {
+                list-style: none;
+                a {
+                    color: $bgrey;
+                    @include semiBold12;
+                }
+            }
+            
+        }
+
+        .check {width: 10%;}
+        .task {width: 50%; text-align: center;}
+        .priority {width: 10%;text-align: center;}
+        .endDate {width: 30%;text-align: end;}
+
+        .container {
+            @include flexColumnCenter;
+            margin-top:30px;
+
+            .alert {
+                color:$red;
+            }
+
+            form {
+                width: 320px;
+                .btn {@include semiBold12;}
+
+                .inputSubmit {
+                margin-top:60px;
+                @include flexRowCenter
+                }
+
+                .inputButton, .formInput{
+                    @include flexRow;
+                    margin-bottom: 10px;
+                }
+
+                .inputButton {
+                }
+
+                .formInput {
+                    @include semiBold12;
+                    justify-content: space-between;
+                    align-items: center;
+                    display: flex;
+
+                    label {margin:5px;}
+
+                    input, select, textarea {
+                        padding: 10px;
+                        border: none;
+                        background-color: $secondary;
+                        color: $bgrey;
+                        border-radius: 12px;
+                        @include semiBold12;
+                        flex: 1;
+                    }
+                
+                }
+            
+
+                .area {
+                    @include flexColumn;
+                    align-items: flex-start;
+                    textarea {
+                        width: 100%;
+                        resize: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media screen and (min-width:768px) {
+    body {
+        width: 60%;
+
+        header {
+            margin-top:10px;
+                .logo {
+                }
+    
+                .headBar {
+                }
+        }
+        
+        nav {
+
+            .navBtn {
+            }
+    
+            a {
+                @include semiBold16;
+            }
+            .addTask a{
+                
+            }
+            .logOut a{
+            }
+        }
+    
+        main {   
+            #presentation {
+                h1 {
+                    @include black48;
+                }
+                p {
+                    @include semiBold24;
+                }
+            }
+
+            #index {            
+                
+                .indexButton {
+    
+                    a {
+                        @include semiBold24;
+                    }
+                    
+                }
+            }
+            
+            #listTitle {
+
+                p {
+                    @include semiBold16;
+                }
+
+            }
+
+            .listBar {
+                width: 860px;
+            }
+            
+            .navList {
+                width: 860px;;
+                li {
+                    a {
+                        @include semiBold16;
+                    }
+                }
+                
+            }
+
+            .container {
+                
+                .alert {
+                }
+
+                form {
+                    width: 640px;
+
+                    .btn {@include semiBold16;}
+
+                    .inputSubmit {                    
+                    }
+
+                    .inputButton, .formInput{
+                    }
+
+                    .inputButton {
+                    }
+
+                    .formInput {
+                        @include semiBold16;
+
+                        input, select,textarea {
+                            @include semiBold16;
+                        }
+                    }
+
+                    .area {
+                        textarea {
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

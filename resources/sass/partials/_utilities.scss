@@ -1,0 +1,47 @@
+@mixin flexColumn{
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin flexColumnCenter {
+    @include flexColumn;
+    align-items: center;
+}
+
+@mixin flexRowCenter {
+    @include flexRow;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+    text-align: center;
+
+}
+
+img {
+    width:100%;
+    height:100%;
+}
+
+button {
+    margin:0;
+    border:0;
+    border-radius: 12px;
+}
+
+.btn {
+    border:none;
+    border-radius: 12px;
+    padding:10px;
+    color:$secondary;
+    background-color: $primary;
+    box-shadow: 0px 2px 4px $primaryShadow;      
+}
+
+.dNone {display:none;}
