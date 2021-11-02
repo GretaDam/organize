@@ -41,7 +41,12 @@ button {
     padding:10px;
     color:$secondary;
     background-color: $primary;
-    box-shadow: 0px 2px 4px $primaryShadow;      
+    box-shadow: 0px 2px 4px $primaryShadow;
+    &:hover {
+        background-color: $secondary;
+        color:$bgrey;
+        box-shadow: 0px 2px 4px $secondaryShadow; 
+    }
 }
 
 .dNone {display:none;}

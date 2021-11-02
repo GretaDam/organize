@@ -81,12 +81,13 @@ body {
                     padding: 10px;
                     border-radius: 12px;
                     box-shadow: 0px 2px 4px $primaryShadow;
+                    &:hover {
+                        background-color: $secondary;
+                        color:$bgrey;
+                        box-shadow: 0px 2px 4px $secondaryShadow; 
+                    }
                 }
-                a:hover {
-                    background-color: $secondary;
-                    color:$bgrey;
-                    box-shadow: 0px 2px 4px $secondaryShadow; 
-                }
+
             }
         }
         
@@ -115,27 +116,63 @@ body {
             li {
                 list-style: none;
                 a {
+                    @include flexRow;
+                    align-items: center;
                     color: $bgrey;
                     @include semiBold12;
+                    img {margin-left: 5px;
+                        width:12px;}
                 }
             }
             
         }
 
-        .check {width: 10%;}
-        .task {width: 50%; text-align: center;}
-        .priority {width: 10%;text-align: center;}
-        .endDate {width: 30%;text-align: end;}
+        .check {
+            width: 8%;
+            p {justify-content: center;}
+        }
+        .task {
+            width: 42%;
+            a, p {justify-content: center;}
+        }
+        .priority {
+            width: 10%;
+            a, p {justify-content: center;}
+        }
+        .endDate {
+            width: 40%;
+            a, p {justify-content: flex-end;}
+        }
 
         .container {
             @include flexColumnCenter;
-            margin-top:30px;
+            margin-top: 15px;
+
+            .mainList {
+                @include flexRow;
+                align-items: center;
+                margin:0;
+                padding:0;
+                width: 330px;
+                li {
+                    list-style: none;
+                    img {width:30px;}
+                    p {
+                        margin:0;
+                        @include flexRow;
+                        align-items: center;
+                        color: $bgrey;
+                        @include semiBold12;
+                    }
+                }
+                
+            }
 
             .alert {
                 color:$red;
             }
 
-            form {
+            .taskForm, #userConnect, #userAdd {
                 width: 320px;
                 .btn {@include semiBold12;}
 
@@ -160,7 +197,9 @@ body {
 
                     label {margin:5px;}
 
-                    input, select, textarea {
+                    p {margin:0; @include semiBold12;}
+
+                    input, select, textarea, .taskContent {
                         padding: 10px;
                         border: none;
                         background-color: $secondary;
@@ -260,11 +299,21 @@ body {
             }
 
             .container {
-                
+                margin-top: 20px;
                 .alert {
                 }
 
-                form {
+                .mainList {
+                    width: 860px;
+                    li {
+                        img {width:50px;}
+                        p {
+                            @include semiBold16;
+                        }
+                    } 
+                }
+
+                .taskForm, #userConnect, #userAdd {
                     width: 640px;
 
                     .btn {@include semiBold16;}
@@ -281,7 +330,7 @@ body {
                     .formInput {
                         @include semiBold16;
 
-                        input, select,textarea {
+                        input, select,textarea, .taskContent {
                             @include semiBold16;
                         }
                     }
