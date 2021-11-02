@@ -26,7 +26,4 @@ Route::get('/register', [PageController::class, 'userCreate'])->name('register')
 
 Route::post('/login', [LoginController::class, 'authenticate'])->name('loginPost');
 
-Route::get('/list', function()
- {
-    return view('list');
-})->middleware(['auth'])->name('list');
+Route::get('/list', [PageController::class, 'listTask'])->middleware(['auth'])->name('list');

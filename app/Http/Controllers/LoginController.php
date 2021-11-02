@@ -30,4 +30,15 @@ class LoginController extends Controller
             'auth' => 'Indentifiant non reconnu',
         ]);
     }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+    }
 }

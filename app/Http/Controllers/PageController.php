@@ -20,4 +20,9 @@ class PageController extends Controller
     {
         return view('user_create');
     }
+
+    public function listTask()
+    {
+        return view('list');
+    }
 }
