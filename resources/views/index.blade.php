@@ -9,10 +9,10 @@
         </div>
         <div id="index">
             <div class="indexButton">
-                <a href="{{route('connectpage')}}">Se connecter</a>
+                <a href="{{route('login')}}">Se connecter</a>
             </div>
             <div class="indexButton">
-                <a href="{{route('usercreatepage')}}">Créer un compte</a>
+                <a href="{{route('register')}}">Créer un compte</a>
             </div>
         </div>
     </main>

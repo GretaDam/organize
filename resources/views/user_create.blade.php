@@ -15,7 +15,7 @@
             
             <div class="formInput">
                 <label for="userEmail">Email :</label>
-                <input class= "inputLong" name="userEmail" type="text">
+                <input name="userEmail" type="text">
             </div>
             
             <div class="formInput">

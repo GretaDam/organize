@@ -12,15 +12,15 @@
     <div class="container">
                
         <form id="userConnect" method="POST" action="">
-            
+            @csrf
             <div class="formInput">
                 <label for="userEmail">Email :</label>
-                <input class= "inputLong" name="userEmail" type="text">
+                <input name="email" type="text">            
             </div>
             
             <div class="formInput">
                 <label for="userPwd">Mot de passe :</label>
-                <input name="userPwd" type="password">
+                <input name="password" type="password">
             </div>
 
             <div class="inputSubmit">
@@ -28,6 +28,11 @@
             </div>
 
         </form>
+        
+        @if ($errors->any())
+            <p class="alert">{{ $errors->first('auth') }}</p>
+        @endif
+
 
     </div>
     

@@ -27,6 +27,11 @@ button {
   background-color: #3ec5ff;
   box-shadow: 0px 2px 4px rgba(62, 197, 255, 0.25);
 }
+.btn:hover {
+  background-color: #E4F7FF;
+  color: #111;
+  box-shadow: 0px 2px 4px rgba(228, 247, 255, 0.25);
+}
 
 .dNone {
   display: none;
@@ -151,63 +156,107 @@ body main .navList li {
   list-style: none;
 }
 body main .navList li a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   color: #111;
   font-weight: 600;
   font-size: 12px;
 }
+body main .navList li a img {
+  margin-left: 5px;
+  width: 12px;
+}
 body main .check {
-  width: 10%;
+  width: 8%;
+}
+body main .check p {
+  justify-content: center;
 }
 body main .task {
-  width: 50%;
-  text-align: center;
+  width: 42%;
+}
+body main .task a, body main .task p {
+  justify-content: center;
 }
 body main .priority {
   width: 10%;
-  text-align: center;
+}
+body main .priority a, body main .priority p {
+  justify-content: center;
 }
 body main .endDate {
-  width: 30%;
-  text-align: end;
+  width: 40%;
+}
+body main .endDate a, body main .endDate p {
+  justify-content: flex-end;
 }
 body main .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 15px;
+}
+body main .container .mainList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 330px;
+}
+body main .container .mainList li {
+  list-style: none;
+}
+body main .container .mainList li img {
+  width: 30px;
+}
+body main .container .mainList li p {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #111;
+  font-weight: 600;
+  font-size: 12px;
 }
 body main .container .alert {
   color: #FF3E3E;
 }
-body main .container form {
+body main .container .taskForm, body main .container #userConnect, body main .container #userAdd {
   width: 320px;
 }
-body main .container form .btn {
+body main .container .taskForm .btn, body main .container #userConnect .btn, body main .container #userAdd .btn {
   font-weight: 600;
   font-size: 12px;
 }
-body main .container form .inputSubmit {
+body main .container .taskForm .inputSubmit, body main .container #userConnect .inputSubmit, body main .container #userAdd .inputSubmit {
   margin-top: 60px;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-body main .container form .inputButton, body main .container form .formInput {
+body main .container .taskForm .inputButton, body main .container .taskForm .formInput, body main .container #userConnect .inputButton, body main .container #userConnect .formInput, body main .container #userAdd .inputButton, body main .container #userAdd .formInput {
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
 }
-body main .container form .formInput {
+body main .container .taskForm .formInput, body main .container #userConnect .formInput, body main .container #userAdd .formInput {
   font-weight: 600;
   font-size: 12px;
   justify-content: space-between;
   align-items: center;
   display: flex;
 }
-body main .container form .formInput label {
+body main .container .taskForm .formInput label, body main .container #userConnect .formInput label, body main .container #userAdd .formInput label {
   margin: 5px;
 }
-body main .container form .formInput input, body main .container form .formInput select, body main .container form .formInput textarea {
+body main .container .taskForm .formInput p, body main .container #userConnect .formInput p, body main .container #userAdd .formInput p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 12px;
+}
+body main .container .taskForm .formInput input, body main .container .taskForm .formInput select, body main .container .taskForm .formInput textarea, body main .container .taskForm .formInput .taskContent, body main .container #userConnect .formInput input, body main .container #userConnect .formInput select, body main .container #userConnect .formInput textarea, body main .container #userConnect .formInput .taskContent, body main .container #userAdd .formInput input, body main .container #userAdd .formInput select, body main .container #userAdd .formInput textarea, body main .container #userAdd .formInput .taskContent {
   padding: 10px;
   border: none;
   background-color: #E4F7FF;
@@ -217,12 +266,12 @@ body main .container form .formInput input, body main .container form .formInput
   font-size: 12px;
   flex: 1;
 }
-body main .container form .area {
+body main .container .taskForm .area, body main .container #userConnect .area, body main .container #userAdd .area {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-body main .container form .area textarea {
+body main .container .taskForm .area textarea, body main .container #userConnect .area textarea, body main .container #userAdd .area textarea {
   width: 100%;
   resize: none;
 }
@@ -264,18 +313,31 @@ body main .container form .area textarea {
     font-weight: 600;
     font-size: 16px;
   }
-  body main .container form {
+  body main .container {
+    margin-top: 20px;
+  }
+  body main .container .mainList {
+    width: 860px;
+  }
+  body main .container .mainList li img {
+    width: 50px;
+  }
+  body main .container .mainList li p {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  body main .container .taskForm, body main .container #userConnect, body main .container #userAdd {
     width: 640px;
   }
-  body main .container form .btn {
+  body main .container .taskForm .btn, body main .container #userConnect .btn, body main .container #userAdd .btn {
     font-weight: 600;
     font-size: 16px;
   }
-  body main .container form .formInput {
+  body main .container .taskForm .formInput, body main .container #userConnect .formInput, body main .container #userAdd .formInput {
     font-weight: 600;
     font-size: 16px;
   }
-  body main .container form .formInput input, body main .container form .formInput select, body main .container form .formInput textarea {
+  body main .container .taskForm .formInput input, body main .container .taskForm .formInput select, body main .container .taskForm .formInput textarea, body main .container .taskForm .formInput .taskContent, body main .container #userConnect .formInput input, body main .container #userConnect .formInput select, body main .container #userConnect .formInput textarea, body main .container #userConnect .formInput .taskContent, body main .container #userAdd .formInput input, body main .container #userAdd .formInput select, body main .container #userAdd .formInput textarea, body main .container #userAdd .formInput .taskContent {
     font-weight: 600;
     font-size: 16px;
   }

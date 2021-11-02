@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\PageController;
+use App\Http\Controllers\LoginController;
+use App\Models\Test;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +18,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'home'])->name('homepage');
 
-Route::get('/se-connecter', [PageController::class, 'userConnect'])->name('connectpage');
+Route::get('/login', [PageController::class, 'userConnect'])->name('login');
 
-Route::get('/creation-compte', [PageController::class, 'userCreate'])->name('usercreatepage');
+Route::get('/register', [PageController::class, 'userCreate'])->name('register');
+
+// Route::resource('Test', Test::class)->middleware(['auth']);
+
+Route::post('/login', [LoginController::class, 'authenticate'])->name('loginPost');
+
+Route::get('/list', function()
+ {
+    return view('list');
+})->middleware(['auth'])->name('list');
