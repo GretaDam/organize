@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\LoginController;
-use App\Models\Test;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 
@@ -19,11 +18,12 @@ use App\Http\Controllers\PageController;
 Route::get('/', [PageController::class, 'home'])->name('homepage');
 
 Route::get('/login', [PageController::class, 'userConnect'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate'])->name('loginPost');
 
 Route::get('/register', [PageController::class, 'userCreate'])->name('register');
 
-// Route::resource('Test', Test::class)->middleware(['auth']);
-
-Route::post('/login', [LoginController::class, 'authenticate'])->name('loginPost');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logoutPost');
 
 Route::get('/list', [PageController::class, 'listTask'])->middleware(['auth'])->name('list');
+
+Route::get('/add-task', [PageController::class, 'addTask'])->name('addTask');

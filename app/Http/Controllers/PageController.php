@@ -25,4 +25,9 @@ class PageController extends Controller
     {
         return view('list');
     }
+
+    public function addTask()
+    {
+        return view('add_task');
+    }
 }

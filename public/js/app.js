@@ -2060,21 +2060,42 @@ module.exports = {
   \*****************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // Vérification formulaire de connexion
+
 
 var userConnect = document.getElementById("userConnect");
-userConnect.addEventListener('submit', function (event) {
-  event.preventDefault();
-  if (!checkInput(this.elements)) return;
-  this.submit();
-});
+var alertLog = document.getElementById("alertLog");
 
-function checkInput(els) {
-  for (var i = 0; i < els.length; i++) {
-    if (els[i].value === "") return false;
-  }
+if (userConnect) {
+  var checkInput = function checkInput(els) {
+    for (var i = 0; i < els.length; i++) {
+      if (els[i].value === "") return false;
+    }
 
-  return true;
+    return true;
+  };
+
+  userConnect.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    if (!checkInput(this.elements)) {
+      alertLog.innerHTML = "<p class='alert'>Vous devez indiquer votre mail et votre mot de passe</p>";
+      return;
+    }
+
+    this.submit();
+  });
+} // Lien de déconnexion
+
+
+var formLogout = document.getElementById('formLogout');
+var linkLogout = document.getElementById('linkLogout');
+
+if (linkLogout) {
+  document.getElementById('linkLogout').addEventListener('click', function (event) {
+    event.preventDefault();
+    formLogout.submit();
+  });
 }
 
 /***/ }),

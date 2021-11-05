@@ -9,11 +9,16 @@
             Ajouter une tâche
         </a>
     </div>
-    <div class="">
-        <a href="">
-            <img class="navBtn" src="{{asset('assets/img/logOut.svg')}}" alt="se déconnecter">
-            Déconnexion
+
+    <div class="logOut">         
+        <form id="formLogout" action="{{route('logoutPost')}}" method="POST">
+            @csrf
+        </form>
+
+        <a href="" id="linkLogout">
+            <img class="navBtn" src="{{asset('assets/img/logOut.svg')}}" alt="se déconnecter">Déconnexion
         </a>
+        
     </div>
 
 </nav>
@@ -35,4 +40,5 @@
 
     <div class="container">
     </div>
+
 @endsection

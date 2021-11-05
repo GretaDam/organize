@@ -92,7 +92,7 @@ body {
         }
         
         #listTitle {
-            margin-top:30px;
+            margin-top:10px;
             @include flexColumnCenter;
             p {
                 color:$bgrey;
@@ -277,7 +277,7 @@ body {
             }
             
             #listTitle {
-
+                margin-top:30px;
                 p {
                     @include semiBold16;
                 }
