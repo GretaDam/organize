@@ -11,16 +11,27 @@
 
     <div class="container">
                
-        <form id="userAdd" method="POST" action="">
-            
+        <form id="userAdd" method="POST" action="{{ route('registerPost') }}">
+            @csrf
             <div class="formInput">
-                <label for="userEmail">Email :</label>
-                <input name="userEmail" type="text">
+                <label for="email">Email :</label>
+                <input id="email" name="email" type="email" value="{{ old('email') ?? null }}">
+                @if ($errors->has('email'))
+                    <div class="alert">{{ $errors->first('email') }}</div>                    
+                @endif
             </div>
             
             <div class="formInput">
-                <label for="userPwd">Mot de passe :</label>
-                <input name="userPwd" type="password">
+                <label for="password">Mot de passe :</label>
+                <input id="password" name="password" type="password">
+                @if ($errors->has('password'))
+                    <div class="alert">{{ $errors->first('password') }}</div>                    
+                @endif
+            </div>
+
+            <div class="formInput">
+                <label for="password_confirmation">Confirmation Mot de passe :</label>
+                <input id="password_confirmation" name="password_confirmation" type="password">
             </div>
 
             <div class="inputSubmit">

@@ -3,6 +3,7 @@
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,8 @@ Route::get('/', [PageController::class, 'home'])->name('homepage');
 Route::get('/login', [PageController::class, 'userConnect'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('loginPost');
 
-Route::get('/register', [PageController::class, 'userCreate'])->name('register');
+Route::get('/register', [UserController::class, 'create'])->name('register');
+Route::post('/register', [UserController::class, 'store'])->name('registerPost');
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logoutPost');
 

@@ -30,6 +30,7 @@
             <div class="formInput">
                 <label for="taskPriority">Priorité :</label>
                 <select id= "taskPriority" name="taskPriority" required>
+                    <option value="" selected disabled>Choisir une priorité</option>
                     <option value="2">Normale</option>
                     <option value="3">Haute</option>
                     <option value="1">Basse</option>
