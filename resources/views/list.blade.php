@@ -4,7 +4,7 @@
 
 <nav>
     <div class="addTask">
-        <a href="">
+        <a href="{{route('addTask')}}">
             <img class="navBtn" src="{{asset('assets/img/addT.svg')}}" alt="ajouter une tâche">
             Ajouter une tâche
         </a>
@@ -39,6 +39,14 @@
     </div>
 
     <div class="container">
+        @foreach (Auth::user()->tasks as $task)
+        <ul class ="mainList">
+            <li class="check"><p><img src="{{asset('assets/img/' . $task->getCheckedImg())}}" alt=""></p></li>
+            <li class="task"><p> {{ $task->name }}</p></li>
+            <li class="priority"><p><img src="{{asset('assets/img/' . $task->getPriorityImg())}}" alt=""></p></li>
+            <li class="endDate"><p>{{ $task->end_date }}</p></li>
+        </ul>
+        @endforeach
     </div>
 
 @endsection

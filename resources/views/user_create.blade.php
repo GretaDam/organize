@@ -13,25 +13,40 @@
                
         <form id="userAdd" method="POST" action="{{ route('registerPost') }}">
             @csrf
-            <div class="formInput">
-                <label for="email">Email :</label>
-                <input id="email" name="email" type="email" value="{{ old('email') ?? null }}">
-                @if ($errors->has('email'))
-                    <div class="alert">{{ $errors->first('email') }}</div>                    
-                @endif
-            </div>
             
             <div class="formInput">
-                <label for="password">Mot de passe :</label>
-                <input id="password" name="password" type="password">
-                @if ($errors->has('password'))
-                    <div class="alert">{{ $errors->first('password') }}</div>                    
+                <label for="name">Nom :</label>
+                <input id="name" name="name" type="text" value="{{ old('name') ?? null }}" placeholder="Votre nom (3 caractères minimum)">
+            </div>
+            <div class="alert">
+                @if ($errors->has('name'))
+                <p>{{ $errors->first('name') }}</p>                
                 @endif
             </div>
 
             <div class="formInput">
-                <label for="password_confirmation">Confirmation Mot de passe :</label>
-                <input id="password_confirmation" name="password_confirmation" type="password">
+                <label for="email">Email :</label>
+                <input id="email" name="email" type="email" value="{{ old('email') ?? null }}" placeholder="Votre adresse email">
+            </div>
+            <div class="alert">
+                @if ($errors->has('email'))
+                    <p>{{ $errors->first('email') }}</p>                
+                @endif
+            </div>
+
+            <div class="formInput">
+                <label for="password">Mot de passe :</label>
+                <input id="password" name="password" type="password" placeholder="Mot de passe (8 caractères minimum)">
+            </div>
+            <div class="alert">
+                @if ($errors->has('password'))
+                    <p>{{ $errors->first('password') }}</p>                
+                @endif
+            </div>
+
+            <div class="formInput">
+                <label for="password_confirmation">Confirmation :</label>
+                <input id="password_confirmation" name="password_confirmation" type="password" placeholder="Confirmation du mot de passe">
             </div>
 
             <div class="inputSubmit">

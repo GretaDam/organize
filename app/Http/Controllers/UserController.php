@@ -38,11 +38,12 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'name' => 'nullable',
+            'name' => ['required', 'min:3'],
             'email' => 'required|email',
-            'password' => ['required', Rules\Password::defaults()],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'email_verified_at' => now(),
         ]);
-        $data['name'] = "DEMO";
+        
         $data['password'] = Hash::make($request->password);
         User::create($data);
         return redirect()->route('login');

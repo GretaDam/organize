@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ListController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,6 @@ Route::post('/register', [UserController::class, 'store'])->name('registerPost')
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logoutPost');
 
-Route::get('/list', [PageController::class, 'listTask'])->middleware(['auth'])->name('list');
+Route::get('/list', [ListController::class, 'listTask'])->middleware(['auth'])->name('list');
 
 Route::get('/add-task', [PageController::class, 'addTask'])->name('addTask');

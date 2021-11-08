@@ -170,6 +170,8 @@ body {
 
             .alert {
                 color:$red;
+                @include flexRowCenter;
+                @include semiBold12;
             }
 
             .taskForm, #userConnect, #userAdd {

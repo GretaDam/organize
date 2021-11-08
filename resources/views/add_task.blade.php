@@ -42,11 +42,6 @@
                 <textarea id="taskDescription" name="taskDescription" rows = "5" required></textarea>
             </div>
 
-            <div class="formInput">
-                <label for="taskTitle">Tag(s) :</label>
-                <input id="taskTags" name="taskTags" placeholder="Séparez vos tags par une virgule" type="text" required>
-            </div>
-
             <div class="inputButton">
                 <button onclick="jointFiles.click()" class="btn" id="btnfile">Joindre un fichier...</button>
                 <input class="dNone" id="jointFiles" name="jointFiles" type="file">

@@ -222,6 +222,11 @@ body main .container .mainList li p {
 }
 body main .container .alert {
   color: #FF3E3E;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 12px;
 }
 body main .container .taskForm, body main .container #userConnect, body main .container #userAdd {
   width: 320px;
