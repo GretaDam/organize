@@ -168,13 +168,13 @@ body main .navList li a img {
   width: 12px;
 }
 body main .check {
-  width: 8%;
+  width: 10%;
 }
-body main .check p {
+body main .check a, body main .check p {
   justify-content: center;
 }
 body main .task {
-  width: 42%;
+  width: 55%;
 }
 body main .task a, body main .task p {
   justify-content: center;
@@ -186,7 +186,8 @@ body main .priority a, body main .priority p {
   justify-content: center;
 }
 body main .endDate {
-  width: 40%;
+  width: 25%;
+  margin-right: 5px;
 }
 body main .endDate a, body main .endDate p {
   justify-content: flex-end;
@@ -195,7 +196,7 @@ body main .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 body main .container .mainList {
   display: flex;
@@ -204,6 +205,9 @@ body main .container .mainList {
   margin: 0;
   padding: 0;
   width: 330px;
+}
+body main .container .mainList:nth-child(odd) {
+  background-color: #E4F7FF;
 }
 body main .container .mainList li {
   list-style: none;
@@ -230,6 +234,7 @@ body main .container .alert {
 }
 body main .container .taskForm, body main .container #userConnect, body main .container #userAdd {
   width: 320px;
+  margin-top: 10px;
 }
 body main .container .taskForm .btn, body main .container #userConnect .btn, body main .container #userAdd .btn {
   font-weight: 600;
@@ -240,6 +245,9 @@ body main .container .taskForm .inputSubmit, body main .container #userConnect .
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+body main .container .taskForm .inputSubmit input, body main .container #userConnect .inputSubmit input, body main .container #userAdd .inputSubmit input {
+  margin: 0 20px;
 }
 body main .container .taskForm .inputButton, body main .container .taskForm .formInput, body main .container #userConnect .inputButton, body main .container #userConnect .formInput, body main .container #userAdd .inputButton, body main .container #userAdd .formInput {
   display: flex;
@@ -321,6 +329,9 @@ body main .container .taskForm .area textarea, body main .container #userConnect
     font-weight: 600;
     font-size: 16px;
   }
+  body main .endDate {
+    margin-right: 25px;
+  }
   body main .container {
     margin-top: 20px;
   }
@@ -330,7 +341,7 @@ body main .container .taskForm .area textarea, body main .container #userConnect
   body main .container .mainList li img {
     width: 50px;
   }
-  body main .container .mainList li p {
+  body main .container .mainList li p, body main .container .mainList li a {
     font-weight: 600;
     font-size: 16px;
   }

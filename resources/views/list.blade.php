@@ -31,7 +31,7 @@
             <li class="check"><a href="">Check</a></li>
             <li class="task"><a href="">Tâche <img src="{{asset('assets/img/arrowD.svg')}}"></a></li>
             <li class="priority"><a href="">Priorité</a></li>
-            <li class="endDate"><a href="">Date et heure de fin</a></li>
+            <li class="endDate"><a href="">Date de fin</a></li>
         </ul>
 
         <div class="listBar"></div>
@@ -39,14 +39,18 @@
     </div>
 
     <div class="container">
+
         @foreach (Auth::user()->tasks as $task)
+        
         <ul class ="mainList">
             <li class="check"><p><img src="{{asset('assets/img/' . $task->getCheckedImg())}}" alt=""></p></li>
-            <li class="task"><p> {{ $task->name }}</p></li>
+            <li class="task"><p>{{ $task->title }}</p></li>
             <li class="priority"><p><img src="{{asset('assets/img/' . $task->getPriorityImg())}}" alt=""></p></li>
-            <li class="endDate"><p>{{ $task->end_date }}</p></li>
+            <li class="endDate"><p>{{ date('d/m/Y', strtotime($task->end_date)) }}</p></li>
         </ul>
+        
         @endforeach
+        
     </div>
 
 @endsection

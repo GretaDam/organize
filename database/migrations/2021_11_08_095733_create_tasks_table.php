@@ -15,7 +15,7 @@ class CreateTasksTable extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-            $table->string("name", 50);
+            $table->string("title", 60);
             $table->text("description");
             $table->string("reference", 10);
             $table->boolean("checked_or_not");
@@ -25,7 +25,6 @@ class CreateTasksTable extends Migration
             $table->dateTime("end_date");
 
             $table->foreignId("user_id")->constrained();
-            
             $table->timestamps();
         });
     }
