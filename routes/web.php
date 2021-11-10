@@ -31,4 +31,4 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logoutPost');
 Route::get('/list', [ListController::class, 'listTask'])->middleware(['auth'])->name('list');
 
 Route::get('/add-task', [TaskController::class, 'create'])->middleware(['auth'])->name('addTask');
-// Route::post('/add-task', [TaskController::class, 'store'])->middleware(['auth'])->name('addTaskStore');
+Route::post('/add-task', [TaskController::class, 'store'])->middleware(['auth'])->name('addTaskStore');

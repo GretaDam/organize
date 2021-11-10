@@ -37,24 +37,25 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        // $data = $request->validate([
-        //     'title' => ['required', 'min:3', 'max:60'],
-        //     'description' => 'required',
-        //     'reference' => 'string',
-        //     'checked_or_not'=> 'boolean',
-        //     'priority' => 'required',
-        //     'joined_file'=>['image', 'nullable'],
-        //     'start_date'=>['required', 'date'],
-        //     'end_date'=>['required', 'date'],
-        // ]);
+        $data = $request->validate([
+            'title' => ['required', 'min:3', 'max:60'],
+            'description' => 'required',
+            // 'reference' => 'string',
+            // 'checked_or_not'=> 'boolean',
+            'priority' => 'required',
+            'joined_file'=>['image', 'nullable'],
+            'start_date'=>['required', 'date'],
+            'end_date'=>['required', 'date'],
+        ]);
 
-        // if (request('joined_file')) {
-        // $data['joined_file'] = request('joined_file')->store('joined_file');
-        // }
+        if (request('joined_file')) {
+        $data['joined_file'] = request('joined_file')->store('joined_file');
+        }
 
         $data['reference'] = Str::random(10);
         $data['checked_or_not'] = 0;
         $data['user_id'] = Auth::user()->id;
+        Task::create($data);
 
         return redirect()->route('list');
     }

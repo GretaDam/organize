@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Hash;
@@ -41,9 +42,8 @@ class UserController extends Controller
             'name' => ['required', 'min:3'],
             'email' => 'required|email',
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'email_verified_at' => now(),
         ]);
-        
+
         $data['password'] = Hash::make($request->password);
         User::create($data);
         return redirect()->route('login');

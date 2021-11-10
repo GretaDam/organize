@@ -10,6 +10,23 @@ class Task extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var string[]
+     */
+    protected $fillable = [
+        'title',
+        'description',
+        'reference',
+        'checked_or_not',
+        'priority',
+        'joined_file',
+        'start_date',
+        'end_date',
+        'user_id', 
+    ];
+
     public function user() {
         return $this->hasOne(User::class);
     }

@@ -23,7 +23,6 @@ class CreateTasksTable extends Migration
             $table->string("joined_file", 255)->nullable();
             $table->dateTime("start_date");
             $table->dateTime("end_date");
-
             $table->foreignId("user_id")->constrained();
             $table->timestamps();
         });
