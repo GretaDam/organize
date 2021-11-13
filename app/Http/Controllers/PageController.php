@@ -21,8 +21,8 @@ class PageController extends Controller
         return view('user_create');
     }
 
-    public function addTask()
+    public function task()
     {
-        return view('add_task');
+        return view('task');
     }
 }

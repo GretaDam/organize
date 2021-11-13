@@ -22,7 +22,7 @@ class TaskFactory extends Factory
             'checked_or_not' => $this->faker->boolean(),
             'priority' => $this->faker->numberBetween(1,3),
             'user_id' => $this->faker->numberBetween(1,5),
-            'joined_file' => 'https://picsum.photos/seed/' . Str::random() . '/640/480',
+            'image' => 'image/NiRAuDweiVmobkP38Oo1J0sHeuC5P0t4TnDPYYuv.jpg',
             'start_date'=> $this->faker->dateTime('now', null),
             'end_date'=> $this->faker->dateTime('now', null), 
         ];

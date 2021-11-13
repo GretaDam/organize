@@ -20,7 +20,7 @@ class CreateTasksTable extends Migration
             $table->string("reference", 10);
             $table->boolean("checked_or_not");
             $table->integer("priority");
-            $table->string("joined_file", 255)->nullable();
+            $table->string("image", 255)->nullable();
             $table->dateTime("start_date");
             $table->dateTime("end_date");
             $table->foreignId("user_id")->constrained();

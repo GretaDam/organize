@@ -6,6 +6,7 @@ use App\Models\Task;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class TaskController extends Controller
 {
@@ -16,7 +17,8 @@ class TaskController extends Controller
      */
     public function index()
     {
-        //
+        $userName = Auth::user()->name;
+        return view('list', ['userName'=>$userName]);
     }
 
     /**
@@ -40,16 +42,14 @@ class TaskController extends Controller
         $data = $request->validate([
             'title' => ['required', 'min:3', 'max:60'],
             'description' => 'required',
-            // 'reference' => 'string',
-            // 'checked_or_not'=> 'boolean',
             'priority' => 'required',
-            'joined_file'=>['image', 'nullable'],
+            'image'=>['image', 'nullable'],
             'start_date'=>['required', 'date'],
             'end_date'=>['required', 'date'],
         ]);
 
-        if (request('joined_file')) {
-        $data['joined_file'] = request('joined_file')->store('joined_file');
+        if (request('image')) {
+        $data['image'] = Storage::disk('public')->put('image', $request->image);
         }
 
         $data['reference'] = Str::random(10);
@@ -68,7 +68,9 @@ class TaskController extends Controller
      */
     public function show($id)
     {
-        //
+        $task=Task::find($id);
+
+        return view('task', compact('task'));
     }
 
     /**
@@ -79,7 +81,8 @@ class TaskController extends Controller
      */
     public function edit($id)
     {
-        //
+        $task=Task::find($id);
+        return view('edit_task', compact('task'));
     }
 
     /**
@@ -91,7 +94,7 @@ class TaskController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**

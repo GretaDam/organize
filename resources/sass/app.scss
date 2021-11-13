@@ -26,7 +26,7 @@ body {
     }
     
     nav {
-        padding: 20px;
+        padding: 10px;
         @include flexRow;
         justify-content: space-between;
         .navBtn {
@@ -48,6 +48,7 @@ body {
     }
 
     main {
+        @include flexColumnCenter;
 
         #presentation {
             @include flexColumnCenter;
@@ -91,9 +92,22 @@ body {
             }
         }
         
+        #userTitle {
+            @include flexRowCenter;
+            h2 {
+                color:$bgrey;
+                @include semiBold16;
+                margin:0;
+                span {
+                    @include black16;
+                }
+            }
+        }
+
         #listTitle {
             margin-top:10px;
             @include flexColumnCenter;
+            width: 90%;
             p {
                 color:$bgrey;
                 @include semiBold12;
@@ -102,17 +116,17 @@ body {
         }
 
         .listBar {
-            width: 330px;
+            width: 100%;
             height:2px;
             background-color: $bgrey;
             box-shadow: 0px 2px 4px $bgreyShadow;
         }
         
         .navList {
-            @include flexRowCenter;
+            @include flexRow;
             margin:0;
             padding:0;
-            width: 330px;
+            width: 100%;
             li {
                 list-style: none;
                 a {
@@ -145,32 +159,41 @@ body {
         }
 
         .container {
-            @include flexColumnCenter;
+            @include flexColumn;
+            justify-content: center;
             margin-top: 5px;
+            width:90%;
 
-            .mainList {
+
+            .listLink {
+                
+                &:nth-child(odd){
+                    background-color: $secondary;
+                }
+                
+                &:hover {
+                    background-color: $primaryShadow;
+                }
+
+                .mainList {
                 @include flexRow;
                 align-items: center;
                 margin:0;
                 padding:0;
-                width: 330px;
-                &:nth-child(odd){
-                    background-color: $secondary;
-                }
+                width: 100%;
 
-                li {
-                    list-style: none;
-                    img {width:30px;}
-                    p {
-                        margin:0;
-                        @include flexRow;
-                        align-items: center;
-                        color: $bgrey;
-                        @include semiBold12;
-
-                    }
+                    li {
+                        list-style: none;
+                        img {width:30px;}
+                        p {
+                            margin:0;
+                            @include flexRow;
+                            align-items: center;
+                            color: $bgrey;
+                            @include semiBold12;
+                        }
+                    }                
                 }
-                
             }
 
             .alert {
@@ -180,14 +203,15 @@ body {
             }
 
             .taskForm, #userConnect, #userAdd {
-                width: 320px;
+                margin:auto;
+                width: 100%;
                 margin-top:10px;
                 .btn {@include semiBold12;}
 
                 .inputSubmit {
                 margin-top:60px;
                 @include flexRowCenter;
-                    input {
+                    input, button {
                         margin: 0 20px;
                     }
                 }
@@ -206,30 +230,94 @@ body {
                     align-items: center;
                     display: flex;
 
-                    label {margin:5px;}
+                    .label {margin:5px;}
+
+                    .labelCheck {
+                        width: 100px;
+                        height:36px;
+                        background-color: $secondary;
+                        box-shadow: 0px 2px 4px $secondaryShadow;
+                        position: relative;
+                        border-radius: 12px;
+                        transition: all .3s;
+                    }
+                    
+                    .labelCheck:before {
+                        content:"en cours";
+                        position: absolute;
+                        top:10px;
+                        left:40px;
+                        transition: all .3s;
+                    }
+
+                    .labelCheck:after {
+                        content:"";
+                        width:26px;
+                        height:26px;
+                        background-color: $background;
+                        position: absolute;
+                        top:5px;
+                        left:5px;
+                        border-radius: 50%;
+                        transition: all .3s;
+                    }
+
+                    .box:checked + .labelCheck:after{
+                        transform: translateX(62px);
+                    }
+
+                    .box:checked + .labelCheck:before{
+                        content:"terminée";
+                        transform: translateX(-28px);
+                    }
+
+                    .box:checked + .labelCheck {
+                        background-color: $primary;
+                        box-shadow: 0px 2px 4px $primaryShadow;
+                    }
+
+                                        
+                    .box:checked + .check:after {
+                        content:"terminée";
+                    }
 
                     p {margin:0; @include semiBold12;}
 
-                    input, select, textarea, .taskContent {
+                    input, select, textarea, .taskContent, .pTask {
                         padding: 10px;
                         border: none;
                         background-color: $secondary;
+                        box-shadow: 0px 2px $secondaryShadow;
                         color: $bgrey;
                         border-radius: 12px;
                         @include semiBold12;
                         flex: 1;
                     }
-                
+
+                    .taskImg {
+                        width: 200px;
+                        height: 200px;
+                        margin:auto;
+                        border: 2px solid $bgrey;
+                        border-radius: 12px;
+                        overflow: hidden;
+                        &:hover {
+                            box-shadow: 0px 2px $bgreyShadow ; 
+                        }
+                    }
                 }
-            
 
                 .area {
                     @include flexColumn;
                     align-items: flex-start;
-                    textarea {
+                    textarea, .pTask {
                         width: 100%;
                         resize: none;
                     }
+                }
+
+                .status {
+                    justify-content: flex-start;
                 }
             }
         }
@@ -252,6 +340,7 @@ body {
         }
         
         nav {
+            padding: 20px;
 
             .navBtn {
             }
@@ -267,6 +356,7 @@ body {
         }
     
         main {   
+
             #presentation {
                 h1 {
                     @include black48;
@@ -287,6 +377,15 @@ body {
                 }
             }
             
+            #userTitle {
+                p {
+                    @include semiBold24;
+                    span {
+                        @include black24;
+                    }
+                }
+            }
+
             #listTitle {
                 margin-top:30px;
                 p {
@@ -295,12 +394,10 @@ body {
 
             }
 
-            .listBar {
-                width: 860px;
+            .listBar {   
             }
             
             .navList {
-                width: 860px;;
                 li {
                     a {
                         @include semiBold16;
@@ -324,19 +421,21 @@ body {
                 .alert {
                 }
 
-                .mainList {
-                    width: 860px;
-                    li {
-                        img {width:50px;}
-                        p,a {
-                            @include semiBold16;
-                        }
-                    } 
+                .listLink {
+    
+                    .mainList {
+   
+                        li {
+                            img{width: 50px;}
+                            p {
+                                @include semiBold16;
+                            }
+                        }                
+                    }
                 }
 
                 .taskForm, #userConnect, #userAdd {
-                    width: 640px;
-
+                    width: 90%;
                     .btn {@include semiBold16;}
 
                     .inputSubmit {                    
@@ -351,7 +450,41 @@ body {
                     .formInput {
                         @include semiBold16;
 
-                        input, select,textarea, .taskContent {
+                        .label {}
+
+                        .labelCheck {
+                            width: 120px;
+                            height:38px;
+                        }
+                        
+                        .labelCheck:before {
+                            top:8px;
+                        }
+    
+                        .labelCheck:after {
+                            width:28px;
+                            height:28px;
+                        }
+    
+                        .box:checked + .labelCheck:after{
+                            transform: translateX(82px);
+                        }
+    
+                        .box:checked + .labelCheck:before{
+                        }
+    
+                        .box:checked + .labelCheck {
+                        }
+    
+                                            
+                        .box:checked + .check:after {
+                            content:"terminée";
+                        }
+
+
+                        p {@include semiBold16;}
+
+                        input, select, textarea, .taskContent, .pTask {
                             @include semiBold16;
                         }
                     }

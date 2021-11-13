@@ -42,10 +42,22 @@ button {
     color:$secondary;
     background-color: $primary;
     box-shadow: 0px 2px 4px $primaryShadow;
+    a {color:$secondary;}
+
+    &.red {
+        background-color: $red;
+        box-shadow: 0px 2px 4px $redShadow;
+    }
+
     &:hover {
         background-color: $secondary;
         color:$bgrey;
-        box-shadow: 0px 2px 4px $secondaryShadow; 
+        box-shadow: 0px 2px 4px $secondaryShadow;
+        a {color:$bgrey;}
+        &.red {
+            color:$red;
+            background-color: $redShadow;
+        }
     }
 }
 
