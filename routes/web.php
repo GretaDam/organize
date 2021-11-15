@@ -1,9 +1,11 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Password;
 use App\Http\Controllers\LoginController;
 
 /*
@@ -37,3 +39,16 @@ Route::get('/edit-task/{id}', [TaskController::class, 'edit'])->middleware(['aut
 Route::post('/edit-task/{id}', [TaskController::class, 'update'])->middleware(['auth'])->name('editTaskPost');
 
 Route::post('/del-task/{id}', [TaskController::class, 'destroy'])->middleware(['auth'])->name('delTask');
+
+Route::get('/forgot-password', function(){return view('forgot_password');});
+Route::post('/forgot-password', function (Request $request) {
+    $request->validate(['email' => 'required|email']);
+
+    $status = Password::sendResetLink(
+        $request->only('email')
+    );
+
+    return $status === Password::RESET_LINK_SENT
+                ? back()->with(['status' => __($status)])
+                : back()->withErrors(['email' => __($status)]);
+})->middleware('guest')->name('password.email');
