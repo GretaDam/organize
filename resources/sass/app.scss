@@ -205,10 +205,10 @@ body {
             }
 
             .taskForm, #userConnect, #userAdd {
+                @include semiBold12;
                 margin:auto;
                 width: 100%;
                 margin-top:10px;
-                .btn {@include semiBold12;}
 
                 .inputSubmit {
                 margin-top:60px;
@@ -225,21 +225,19 @@ body {
 
                 .inputButton {
                 }
-                
+                                
                 .modalContent {
                     @include semiBold12;
                 }
 
                 .formInput {
-                    @include semiBold12;
                     justify-content: space-between;
                     align-items: center;
                     display: flex;
 
                     .label {margin:5px;}
 
-
-                    p {margin:0; @include semiBold12;}
+                    p {margin:0;}
 
                     input, select, textarea, .taskContent, .pTask {
                         padding: 10px;
@@ -277,6 +275,7 @@ body {
                 .status {
                     justify-content: flex-start;
                 }
+
             }
         }
     }
@@ -393,8 +392,8 @@ body {
                 }
 
                 .taskForm, #userConnect, #userAdd {
+                    @include semiBold16;
                     width: 90%;
-                    .btn {@include semiBold16;}
 
                     .inputSubmit {                    
                     }

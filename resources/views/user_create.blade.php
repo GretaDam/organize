@@ -25,7 +25,7 @@
             </div>
 
             <div class="formInput">
-                <label for="email">Email :</label>
+                <label class="label" for="email">Email :</label>
                 <input id="email" name="email" type="email" value="{{ old('email') ?? null }}" placeholder="Votre adresse email">
             </div>
             <div class="alert">
@@ -35,7 +35,7 @@
             </div>
 
             <div class="formInput">
-                <label for="password">Mot de passe :</label>
+                <label class="label" for="password">Mot de passe :</label>
                 <input id="password" name="password" type="password" placeholder="Mot de passe (8 caractères minimum)">
             </div>
             <div class="alert">
@@ -45,7 +45,7 @@
             </div>
 
             <div class="formInput">
-                <label for="password_confirmation">Confirmation :</label>
+                <label class="label" for="password_confirmation">Confirmation :</label>
                 <input id="password_confirmation" name="password_confirmation" type="password" placeholder="Confirmation du mot de passe">
             </div>
 
