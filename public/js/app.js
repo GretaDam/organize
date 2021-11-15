@@ -2090,25 +2090,11 @@ if (userConnect) {
 
 var formLogout = document.getElementById('formLogout');
 var linkLogout = document.getElementById('linkLogout');
-
-if (linkLogout) {
-  document.getElementById('linkLogout').addEventListener('click', function (event) {
-    event.preventDefault();
-    formLogout.submit();
-  });
-} // Lien de suppression
-
+valideForm(formLogout, linkLogout); // Lien de suppression
 
 var formDel = document.getElementById('formDel');
 var linkDel = document.getElementById('linkDel');
-
-if (linkDel) {
-  document.getElementById('linkDel').addEventListener('click', function (event) {
-    event.preventDefault();
-    formDel.submit();
-  });
-} // Mise en place Modal
-
+valideForm(formDel, linkDel); // Mise en place Modal
 
 var delModal = document.getElementById("delModal");
 var delBtn = document.getElementById("delBtn");
@@ -2128,6 +2114,16 @@ if (delModal) {
       delModal.style.display = "none";
     }
   };
+} // Fonction de validation de formulaire CSRF par un lien
+
+
+function valideForm(form, link) {
+  if (link) {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      form.submit();
+    });
+  }
 }
 
 /***/ }),

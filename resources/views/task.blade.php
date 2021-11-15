@@ -14,6 +14,8 @@
             <div class="formInput">
                 <p class="label">Titre :</p>
                 <p class="pTask">{{$task->title}}</p>
+                <p class="label">Référence :</p>
+                <p class="pTask">{{$task->reference}}</p>
             </div>
 
             <div class="formInput">

@@ -29,12 +29,9 @@ img {
     height:100%;
 }
 
-button {
-    margin:0;
-    border:0;
-    border-radius: 12px;
-}
+.dNone {display:none;}
 
+// Mise en forme des boutons
 .btn {
     border:none;
     border-radius: 12px;
@@ -60,7 +57,59 @@ button {
     }
 }
 
-.dNone {display:none;}
+// Transformation bouton check en switch
+
+.labelCheck {
+    width: 100px;
+    height:36px;
+    background-color: $secondary;
+    box-shadow: 0px 2px 4px $secondaryShadow;
+    position: relative;
+    border-radius: 12px;
+    transition: all .3s;
+}
+
+.labelCheck:before {
+    content:"en cours";
+    position: absolute;
+    top:10px;
+    left:40px;
+    transition: all .3s;
+}
+
+.labelCheck:after {
+    content:"";
+    width:26px;
+    height:26px;
+    background-color: $primary;
+    position: absolute;
+    top:5px;
+    left:5px;
+    border-radius: 50%;
+    transition: all .3s;
+}
+
+.box:checked + .labelCheck:after{
+    transform: translateX(62px);
+    background-color: $secondary;
+}
+
+.box:checked + .labelCheck:before{
+    content:"terminée";
+    transform: translateX(-28px);
+}
+
+.box:checked + .labelCheck {
+    background-color: $primary;
+    box-shadow: 0px 2px 4px $primaryShadow;
+}
+
+                    
+.box:checked + .check:after {
+    content:"terminée";
+}
+
+// Mise en forme Modale
 
 .modal {
     display: none;
@@ -83,7 +132,7 @@ button {
     background-color: $background;
     box-shadow: 2px 2px 4px $bgreyShadow;
     margin: auto;
-    padding: 5px;
+    padding: 15px 0;
     width: 180px;
     p {
         margin:5px;

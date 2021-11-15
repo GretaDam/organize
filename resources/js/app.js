@@ -28,23 +28,13 @@ if (userConnect) {
 const formLogout = document.getElementById('formLogout');
 const linkLogout =  document.getElementById('linkLogout');
 
-if (linkLogout) {
-document.getElementById('linkLogout').addEventListener('click', event => {
-    event.preventDefault();
-    formLogout.submit();
-  })
-}
+valideForm(formLogout,linkLogout);
 
 // Lien de suppression
 const formDel = document.getElementById('formDel');
 const linkDel =  document.getElementById('linkDel');
 
-if (linkDel) {
-document.getElementById('linkDel').addEventListener('click', event => {
-    event.preventDefault();
-    formDel.submit();
-  })
-}
+valideForm(formDel,linkDel);
 
 
 // Mise en place Modal
@@ -66,5 +56,16 @@ if (delModal) {
         if (event.target == modal) {
         delModal.style.display = "none";
         }
+    }
+}
+
+// Fonction de validation de formulaire CSRF par un lien
+
+function valideForm(form, link) {
+    if (link) {
+        link.addEventListener('click', event => {
+            event.preventDefault();
+            form.submit();
+        })
     }
 }
