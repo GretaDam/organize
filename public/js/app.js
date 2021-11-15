@@ -2096,6 +2096,27 @@ if (linkLogout) {
     event.preventDefault();
     formLogout.submit();
   });
+} // Mise en place Modal
+
+
+var delModal = document.getElementById("delModal");
+var delBtn = document.getElementById("delBtn");
+var exitBtn = document.getElementById("exitBtn");
+
+if (delModal) {
+  delBtn.onclick = function () {
+    delModal.style.display = "block";
+  };
+
+  exitBtn.onclick = function () {
+    delModal.style.display = "none";
+  };
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      delModal.style.display = "none";
+    }
+  };
 }
 
 /***/ }),

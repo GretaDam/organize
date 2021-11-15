@@ -37,10 +37,20 @@
             <div class="formInput">
                 <label class="label" for="priority">Priorité :</label>
                 <select id= "priority" name="priority" required>
-                    <option value="{{$task->priority}}" selected disabled>{{$task->getPriorityString()}} (actuel)</option>
+                    <option value="{{$task->priority}}" selected>{{$task->getPriorityString()}}</option>
+                    
+                    @if ($task->priority != "2")
                     <option value="2">Normale</option>
+                    @endif
+
+                    @if ($task->priority != "3")
                     <option value="3">Haute</option>
+                    @endif
+
+                    @if ($task->priority != "1")
                     <option value="1">Basse</option>
+                    @endif
+
                 </select>  
             </div>
 

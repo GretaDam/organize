@@ -33,21 +33,21 @@ class Task extends Model
 
     public function getPriorityImg() {
         switch ($this->priority) {
-            case 1: return 'priorityH.svg';
+            case 1: return 'priorityB.svg';
             case 2: return 'priorityN.svg';
-            case 3: return 'priorityB.svg';
+            case 3: return 'priorityH.svg';
             default: return null;
         }
     }
 
     public function getPriorityString() {
         switch ($this->priority) {
-            case 1: return 'Haute';
+            case 1: return 'Basse';
             case 2: return 'Normal';
-            case 3: return 'Basse';
+            case 3: return 'Haute';
             default: return null;
         }
-    }        
+    }
 
     public function getCheckedImg() {
         switch ($this->checked_or_not) {

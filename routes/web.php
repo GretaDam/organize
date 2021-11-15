@@ -30,8 +30,10 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logoutPost');
 Route::get('/list', [TaskController::class, 'index'])->middleware(['auth'])->name('list');
 Route::get('/task/{id}', [TaskController::class, 'show'])->middleware(['auth'])->name('task');
 
+Route::get('/add-task', [TaskController::class, 'create'])->middleware(['auth'])->name('addTask');
+Route::post('/add-task', [TaskController::class, 'store'])->middleware(['auth'])->name('addTaskStore');
+
 Route::get('/edit-task/{id}', [TaskController::class, 'edit'])->middleware(['auth'])->name('editTask');
 Route::post('/edit-task/{id}', [TaskController::class, 'update'])->middleware(['auth'])->name('editTaskPost');
 
-Route::get('/add-task', [TaskController::class, 'create'])->middleware(['auth'])->name('addTask');
-Route::post('/add-task', [TaskController::class, 'store'])->middleware(['auth'])->name('addTaskStore');
+Route::get('/del-task/{id}', [TaskController::class, 'destroy'])->middleware(['auth'])->name('delTask');

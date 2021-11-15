@@ -49,7 +49,7 @@
 
             <div class="inputSubmit">
                 <input class="btn" type="submit" value="Valider">
-                <input class="btn" onclick="window.location.href = '{{route ('list')}}'" type="button" value="Annuler">
+                <button class="btn"><a href="{{route ('list')}}">Annuler</a></button>
             </div>
 
         </form>

@@ -141,11 +141,13 @@ body {
         }
 
         .check {
-            width: 10%;
-            a, p {justify-content: center;}
+            width: 12%;
+            a, p {
+                justify-content: center;
+            }
         }
         .task {
-            width: 55%;
+            width: 53%;
             a, p {justify-content: center;}
         }
         .priority {
@@ -163,7 +165,7 @@ body {
             justify-content: center;
             margin-top: 5px;
             width:90%;
-
+            padding-bottom: 30px;
 
             .listLink {
                 
@@ -222,6 +224,10 @@ body {
                 }
 
                 .inputButton {
+                }
+                
+                .modalContent {
+                    @include semiBold12;
                 }
 
                 .formInput {
@@ -445,6 +451,13 @@ body {
                     }
 
                     .inputButton {
+                    }
+
+                    .modalContent {
+                        @include semiBold16;
+                        left:calc(50% - 130px);
+                        width: 260px;
+                        padding: 10px;
                     }
 
                     .formInput {

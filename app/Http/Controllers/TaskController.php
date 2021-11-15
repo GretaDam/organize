@@ -94,7 +94,21 @@ class TaskController extends Controller
      */
     public function update(Request $request, $id)
     {
+    
+        $data = $request->validate([
+            'title' => ['required', 'min:3', 'max:60'],
+            'checked_or_not'=>'required',
+            'description' => 'required',
+            'priority' => 'required',
+            'image'=>['image', 'nullable'],
+            'start_date'=>['required', 'date'],
+            'end_date'=>['required', 'date'],
+        ]);
 
+
+        Task::whereId($id)->update($data);
+
+        return redirect()->route('list');
     }
 
     /**
@@ -105,6 +119,9 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $task=Task::find($id);
+        $task->delete();
+        
+        return redirect()->route('list');
     }
 }

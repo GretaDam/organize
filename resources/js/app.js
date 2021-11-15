@@ -24,7 +24,6 @@ if (userConnect) {
     }
 }
 
-
 // Lien de déconnexion
 const formLogout = document.getElementById('formLogout');
 const linkLogout =  document.getElementById('linkLogout');
@@ -34,4 +33,26 @@ document.getElementById('linkLogout').addEventListener('click', event => {
     event.preventDefault();
     formLogout.submit();
   })
+}
+
+// Mise en place Modal
+
+const delModal = document.getElementById("delModal");
+const delBtn = document.getElementById("delBtn");
+const exitBtn = document.getElementById("exitBtn");
+
+if (delModal) {
+    delBtn.onclick = function() {   
+    delModal.style.display = "block";
+    }
+
+    exitBtn.onclick = function() {  
+    delModal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+        delModal.style.display = "none";
+        }
+    }
 }
