@@ -48,7 +48,7 @@ class TaskController extends Controller
             'end_date'=>['required', 'date'],
         ]);
 
-        if (request('image')) {
+        if ($request->image) {
         $data['image'] = Storage::disk('public')->put('image', $request->image);
         }
 
@@ -95,6 +95,8 @@ class TaskController extends Controller
     public function update(Request $request, $id)
     {
     
+        $task = Task::find($id);
+
         $data = $request->validate([
             'title' => ['required', 'min:3', 'max:60'],
             'checked_or_not'=>'required',
@@ -105,6 +107,10 @@ class TaskController extends Controller
             'end_date'=>['required', 'date'],
         ]);
 
+        if ($request->image) {
+            $data['image'] = Storage::disk('public')->put('image', $request->image);
+
+        }
 
         Task::whereId($id)->update($data);
 

@@ -36,4 +36,4 @@ Route::post('/add-task', [TaskController::class, 'store'])->middleware(['auth'])
 Route::get('/edit-task/{id}', [TaskController::class, 'edit'])->middleware(['auth'])->name('editTask');
 Route::post('/edit-task/{id}', [TaskController::class, 'update'])->middleware(['auth'])->name('editTaskPost');
 
-Route::get('/del-task/{id}', [TaskController::class, 'destroy'])->middleware(['auth'])->name('delTask');
+Route::post('/del-task/{id}', [TaskController::class, 'destroy'])->middleware(['auth'])->name('delTask');

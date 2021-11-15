@@ -2096,6 +2096,17 @@ if (linkLogout) {
     event.preventDefault();
     formLogout.submit();
   });
+} // Lien de suppression
+
+
+var formDel = document.getElementById('formDel');
+var linkDel = document.getElementById('linkDel');
+
+if (linkDel) {
+  document.getElementById('linkDel').addEventListener('click', function (event) {
+    event.preventDefault();
+    formDel.submit();
+  });
 } // Mise en place Modal
 
 

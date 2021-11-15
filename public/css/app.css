@@ -492,7 +492,7 @@ body main .container .taskForm .status, body main .container #userConnect .statu
     font-size: 16px;
     left: calc(50% - 130px);
     width: 260px;
-    padding: 10px;
+    padding: 10px 0;
   }
   body main .container .taskForm .formInput, body main .container #userConnect .formInput, body main .container #userAdd .formInput {
     font-weight: 600;

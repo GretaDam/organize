@@ -35,6 +35,18 @@ document.getElementById('linkLogout').addEventListener('click', event => {
   })
 }
 
+// Lien de suppression
+const formDel = document.getElementById('formDel');
+const linkDel =  document.getElementById('linkDel');
+
+if (linkDel) {
+document.getElementById('linkDel').addEventListener('click', event => {
+    event.preventDefault();
+    formDel.submit();
+  })
+}
+
+
 // Mise en place Modal
 
 const delModal = document.getElementById("delModal");

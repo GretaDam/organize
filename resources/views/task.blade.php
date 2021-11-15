@@ -40,9 +40,16 @@
 
             <div class="formInput area">
                 <p class="label">Image jointe :</p>
-                <a class="taskImg" href="{{Storage::url($task->image)}}" target="_blank">  
-                    <img src="{{Storage::url($task->image) }}">
+                
+                @if (substr($task->image, 0, 4 ) === "http")
+                <a class="taskImg" href="{{$task->image}}" target="_blank">  
+                    <img src="{{$task->image}}">
                 </a>
+                    @else
+                    <a class="taskImg" href="{{Storage::url($task->image)}}" target="_blank">  
+                        <img src="{{Storage::url($task->image) }}">
+                    </a>
+                @endif
             </div>
 
             @endif
@@ -57,7 +64,10 @@
                 <div class="modalContent">
                     
                     <p>Supprimer la tâche ?</p>
-                    <p><button class="btn red"><a href="{{route('delTask', $task->id)}}">Oui</a></button>
+                    <form id="formDel" action="{{route('delTask', $task->id)}}" method="POST">
+                        @csrf
+                    </form>
+                    <p><a class="btn red" id="linkDel" href="">Oui</a>
                     <button id="exitBtn" class="btn">Non</button></p>             
 
                 </div>
