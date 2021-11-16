@@ -49,7 +49,11 @@ class TaskController extends Controller
         ]);
 
         if ($request->image) {
-        $data['image'] = Storage::disk('public')->put('image', $request->image);
+            $pathOrigine = public_path()."/image/";
+            if (!file_exists($pathOrigine)) {
+                mkdir($pathOrigine, 666, true);
+            }
+            $data['image'] = Storage::disk('public')->put('image', $request->image);
         }
 
         $data['reference'] = Str::random(10);
@@ -94,8 +98,6 @@ class TaskController extends Controller
      */
     public function update(Request $request, $id)
     {
-    
-        $task = Task::find($id);
 
         $data = $request->validate([
             'title' => ['required', 'min:3', 'max:60'],
@@ -108,6 +110,7 @@ class TaskController extends Controller
         ]);
 
         if ($request->image) {
+
             $data['image'] = Storage::disk('public')->put('image', $request->image);
 
         }
