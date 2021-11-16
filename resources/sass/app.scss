@@ -186,7 +186,10 @@ body {
 
                     li {
                         list-style: none;
-                        img {width:30px;}
+                        img {
+                            margin-top: 2px;
+                            width:30px;
+                        }
                         p {
                             margin:0;
                             @include flexRow;
@@ -285,7 +288,7 @@ body {
 
 @media screen and (min-width:768px) {
     body {
-        width: 60%;
+        width: 60%;       
 
         header {
             margin-top:10px;
@@ -313,7 +316,7 @@ body {
         }
     
         main {   
-
+            
             #presentation {
                 h1 {
                     @include black48;
@@ -394,7 +397,9 @@ body {
                 .taskForm, #userConnect, #userAdd {
                     @include semiBold16;
                     width: 90%;
-
+                    
+                    .btn {@include semiBold16;}
+            
                     .inputSubmit {                    
                     }
 

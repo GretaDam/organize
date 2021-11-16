@@ -32,7 +32,7 @@
 
         <ul class ="navList">
             <li class="check"><a href="">Terminée</a></li>
-            <li class="task"><a href="">Tâche <img src="{{asset('assets/img/arrowD.svg')}}"></a></li>
+            <li class="task"><a href="">Tâche</a></li>
             <li class="priority"><a href="">Priorité</a></li>
             <li class="endDate"><a href="">Date de fin</a></li>
         </ul>
@@ -43,7 +43,7 @@
 
     <div class="container">
 
-        @foreach (Auth::user()->tasks as $task)
+        @foreach (Auth::user()->tasks->sortByDesc('id') as $task)
         <a class="listLink" href="{{route('task',$task->id)}}">
             <ul class ="mainList">
                 <li class="check"><p><img src="{{asset('assets/img/' . $task->getCheckedImg())}}" alt=""></p></li>
