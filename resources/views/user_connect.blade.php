@@ -14,13 +14,13 @@
         <form id="userConnect" method="POST" action="">
             @csrf
             <div class="formInput">
-                <label for="userEmail">Email :</label>
+                <label class="label" for="email">Email :</label>
                 <input name="email" type="text" placeholder="Votre adresse email">            
             </div>
             
             <div class="formInput">
-                <label for="userPwd">Mot de passe :</label>
-                <input name="password" type="password" placeholder="Mot de passe">
+                <label class="label" for="password">Mot de passe :</label>
+                <input name="password" type="password" placeholder="Mot de passe">                
             </div>
 
             <div id="alertLog">
@@ -30,7 +30,7 @@
             </div>
             
             <div class="inputSubmit">
-                <input class="btn" type="submit" value="Se connecter">
+                <input class="btn" type="submit" value="Se connecter">               
             </div>
 
         </form>      

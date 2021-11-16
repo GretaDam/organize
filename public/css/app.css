@@ -347,49 +347,55 @@ body main .container .alert {
   font-weight: 600;
   font-size: 12px;
 }
-body main .container .taskForm, body main .container #userConnect, body main .container #userAdd {
+body main .container .taskForm, body main .container #userConnect, body main .container #userAdd, body main .container #forgotPassword {
+  font-weight: 600;
+  font-size: 12px;
   margin: auto;
   width: 100%;
   margin-top: 10px;
 }
-body main .container .taskForm .btn, body main .container #userConnect .btn, body main .container #userAdd .btn {
-  font-weight: 600;
-  font-size: 12px;
-}
-body main .container .taskForm .inputSubmit, body main .container #userConnect .inputSubmit, body main .container #userAdd .inputSubmit {
+body main .container .taskForm .inputSubmit, body main .container #userConnect .inputSubmit, body main .container #userAdd .inputSubmit, body main .container #forgotPassword .inputSubmit {
   margin-top: 60px;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-body main .container .taskForm .inputSubmit input, body main .container .taskForm .inputSubmit button, body main .container #userConnect .inputSubmit input, body main .container #userConnect .inputSubmit button, body main .container #userAdd .inputSubmit input, body main .container #userAdd .inputSubmit button {
+body main .container .taskForm .inputSubmit input, body main .container .taskForm .inputSubmit button, body main .container #userConnect .inputSubmit input, body main .container #userConnect .inputSubmit button, body main .container #userAdd .inputSubmit input, body main .container #userAdd .inputSubmit button, body main .container #forgotPassword .inputSubmit input, body main .container #forgotPassword .inputSubmit button {
   margin: 0 20px;
 }
-body main .container .taskForm .inputButton, body main .container .taskForm .formInput, body main .container #userConnect .inputButton, body main .container #userConnect .formInput, body main .container #userAdd .inputButton, body main .container #userAdd .formInput {
+body main .container .taskForm .inputButton, body main .container .taskForm .formInput, body main .container #userConnect .inputButton, body main .container #userConnect .formInput, body main .container #userAdd .inputButton, body main .container #userAdd .formInput, body main .container #forgotPassword .inputButton, body main .container #forgotPassword .formInput {
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
 }
-body main .container .taskForm .modalContent, body main .container #userConnect .modalContent, body main .container #userAdd .modalContent {
+body main .container .taskForm .formLink, body main .container #userConnect .formLink, body main .container #userAdd .formLink, body main .container #forgotPassword .formLink {
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+body main .container .taskForm .formLink a, body main .container #userConnect .formLink a, body main .container #userAdd .formLink a, body main .container #forgotPassword .formLink a {
+  color: #3ec5ff;
+}
+body main .container .taskForm .formLink a:hover, body main .container #userConnect .formLink a:hover, body main .container #userAdd .formLink a:hover, body main .container #forgotPassword .formLink a:hover {
+  color: #111;
+}
+body main .container .taskForm .modalContent, body main .container #userConnect .modalContent, body main .container #userAdd .modalContent, body main .container #forgotPassword .modalContent {
   font-weight: 600;
   font-size: 12px;
 }
-body main .container .taskForm .formInput, body main .container #userConnect .formInput, body main .container #userAdd .formInput {
-  font-weight: 600;
-  font-size: 12px;
+body main .container .taskForm .formInput, body main .container #userConnect .formInput, body main .container #userAdd .formInput, body main .container #forgotPassword .formInput {
   justify-content: space-between;
   align-items: center;
   display: flex;
 }
-body main .container .taskForm .formInput .label, body main .container #userConnect .formInput .label, body main .container #userAdd .formInput .label {
+body main .container .taskForm .formInput .label, body main .container #userConnect .formInput .label, body main .container #userAdd .formInput .label, body main .container #forgotPassword .formInput .label {
   margin: 5px;
 }
-body main .container .taskForm .formInput p, body main .container #userConnect .formInput p, body main .container #userAdd .formInput p {
+body main .container .taskForm .formInput p, body main .container #userConnect .formInput p, body main .container #userAdd .formInput p, body main .container #forgotPassword .formInput p {
   margin: 0;
-  font-weight: 600;
-  font-size: 12px;
 }
-body main .container .taskForm .formInput input, body main .container .taskForm .formInput select, body main .container .taskForm .formInput textarea, body main .container .taskForm .formInput .taskContent, body main .container .taskForm .formInput .pTask, body main .container #userConnect .formInput input, body main .container #userConnect .formInput select, body main .container #userConnect .formInput textarea, body main .container #userConnect .formInput .taskContent, body main .container #userConnect .formInput .pTask, body main .container #userAdd .formInput input, body main .container #userAdd .formInput select, body main .container #userAdd .formInput textarea, body main .container #userAdd .formInput .taskContent, body main .container #userAdd .formInput .pTask {
+body main .container .taskForm .formInput input, body main .container .taskForm .formInput select, body main .container .taskForm .formInput textarea, body main .container .taskForm .formInput .taskContent, body main .container .taskForm .formInput .pTask, body main .container #userConnect .formInput input, body main .container #userConnect .formInput select, body main .container #userConnect .formInput textarea, body main .container #userConnect .formInput .taskContent, body main .container #userConnect .formInput .pTask, body main .container #userAdd .formInput input, body main .container #userAdd .formInput select, body main .container #userAdd .formInput textarea, body main .container #userAdd .formInput .taskContent, body main .container #userAdd .formInput .pTask, body main .container #forgotPassword .formInput input, body main .container #forgotPassword .formInput select, body main .container #forgotPassword .formInput textarea, body main .container #forgotPassword .formInput .taskContent, body main .container #forgotPassword .formInput .pTask {
   padding: 10px;
   border: none;
   background-color: #e4f7ff;
@@ -400,7 +406,7 @@ body main .container .taskForm .formInput input, body main .container .taskForm 
   font-size: 12px;
   flex: 1;
 }
-body main .container .taskForm .formInput .taskImg, body main .container #userConnect .formInput .taskImg, body main .container #userAdd .formInput .taskImg {
+body main .container .taskForm .formInput .taskImg, body main .container #userConnect .formInput .taskImg, body main .container #userAdd .formInput .taskImg, body main .container #forgotPassword .formInput .taskImg {
   width: 200px;
   height: 200px;
   margin: auto;
@@ -408,19 +414,19 @@ body main .container .taskForm .formInput .taskImg, body main .container #userCo
   border-radius: 12px;
   overflow: hidden;
 }
-body main .container .taskForm .formInput .taskImg:hover, body main .container #userConnect .formInput .taskImg:hover, body main .container #userAdd .formInput .taskImg:hover {
+body main .container .taskForm .formInput .taskImg:hover, body main .container #userConnect .formInput .taskImg:hover, body main .container #userAdd .formInput .taskImg:hover, body main .container #forgotPassword .formInput .taskImg:hover {
   box-shadow: 3px 3px 4px rgba(17, 17, 17, 0.25);
 }
-body main .container .taskForm .area, body main .container #userConnect .area, body main .container #userAdd .area {
+body main .container .taskForm .area, body main .container #userConnect .area, body main .container #userAdd .area, body main .container #forgotPassword .area {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-body main .container .taskForm .area textarea, body main .container .taskForm .area .pTask, body main .container #userConnect .area textarea, body main .container #userConnect .area .pTask, body main .container #userAdd .area textarea, body main .container #userAdd .area .pTask {
+body main .container .taskForm .area textarea, body main .container .taskForm .area .pTask, body main .container #userConnect .area textarea, body main .container #userConnect .area .pTask, body main .container #userAdd .area textarea, body main .container #userAdd .area .pTask, body main .container #forgotPassword .area textarea, body main .container #forgotPassword .area .pTask {
   width: 100%;
   resize: none;
 }
-body main .container .taskForm .status, body main .container #userConnect .status, body main .container #userAdd .status {
+body main .container .taskForm .status, body main .container #userConnect .status, body main .container #userAdd .status, body main .container #forgotPassword .status {
   justify-content: flex-start;
 }
 
@@ -482,43 +488,41 @@ body main .container .taskForm .status, body main .container #userConnect .statu
     font-weight: 600;
     font-size: 16px;
   }
-  body main .container .taskForm, body main .container #userConnect, body main .container #userAdd {
-    width: 90%;
-  }
-  body main .container .taskForm .btn, body main .container #userConnect .btn, body main .container #userAdd .btn {
+  body main .container .taskForm, body main .container #userConnect, body main .container #userAdd, body main .container #forgotPassword {
     font-weight: 600;
     font-size: 16px;
+    width: 90%;
   }
-  body main .container .taskForm .modalContent, body main .container #userConnect .modalContent, body main .container #userAdd .modalContent {
+  body main .container .taskForm .modalContent, body main .container #userConnect .modalContent, body main .container #userAdd .modalContent, body main .container #forgotPassword .modalContent {
     font-weight: 600;
     font-size: 16px;
     left: calc(50% - 130px);
     width: 260px;
     padding: 25px 0;
   }
-  body main .container .taskForm .formInput, body main .container #userConnect .formInput, body main .container #userAdd .formInput {
+  body main .container .taskForm .formInput, body main .container #userConnect .formInput, body main .container #userAdd .formInput, body main .container #forgotPassword .formInput {
     font-weight: 600;
     font-size: 16px;
   }
-  body main .container .taskForm .formInput .labelCheck, body main .container #userConnect .formInput .labelCheck, body main .container #userAdd .formInput .labelCheck {
+  body main .container .taskForm .formInput .labelCheck, body main .container #userConnect .formInput .labelCheck, body main .container #userAdd .formInput .labelCheck, body main .container #forgotPassword .formInput .labelCheck {
     width: 120px;
     height: 38px;
   }
-  body main .container .taskForm .formInput .labelCheck:before, body main .container #userConnect .formInput .labelCheck:before, body main .container #userAdd .formInput .labelCheck:before {
+  body main .container .taskForm .formInput .labelCheck:before, body main .container #userConnect .formInput .labelCheck:before, body main .container #userAdd .formInput .labelCheck:before, body main .container #forgotPassword .formInput .labelCheck:before {
     top: 8px;
   }
-  body main .container .taskForm .formInput .labelCheck:after, body main .container #userConnect .formInput .labelCheck:after, body main .container #userAdd .formInput .labelCheck:after {
+  body main .container .taskForm .formInput .labelCheck:after, body main .container #userConnect .formInput .labelCheck:after, body main .container #userAdd .formInput .labelCheck:after, body main .container #forgotPassword .formInput .labelCheck:after {
     width: 28px;
     height: 28px;
   }
-  body main .container .taskForm .formInput .box:checked + .labelCheck:after, body main .container #userConnect .formInput .box:checked + .labelCheck:after, body main .container #userAdd .formInput .box:checked + .labelCheck:after {
+  body main .container .taskForm .formInput .box:checked + .labelCheck:after, body main .container #userConnect .formInput .box:checked + .labelCheck:after, body main .container #userAdd .formInput .box:checked + .labelCheck:after, body main .container #forgotPassword .formInput .box:checked + .labelCheck:after {
     transform: translateX(82px);
   }
-  body main .container .taskForm .formInput p, body main .container #userConnect .formInput p, body main .container #userAdd .formInput p {
+  body main .container .taskForm .formInput p, body main .container #userConnect .formInput p, body main .container #userAdd .formInput p, body main .container #forgotPassword .formInput p {
     font-weight: 600;
     font-size: 16px;
   }
-  body main .container .taskForm .formInput input, body main .container .taskForm .formInput select, body main .container .taskForm .formInput textarea, body main .container .taskForm .formInput .taskContent, body main .container .taskForm .formInput .pTask, body main .container #userConnect .formInput input, body main .container #userConnect .formInput select, body main .container #userConnect .formInput textarea, body main .container #userConnect .formInput .taskContent, body main .container #userConnect .formInput .pTask, body main .container #userAdd .formInput input, body main .container #userAdd .formInput select, body main .container #userAdd .formInput textarea, body main .container #userAdd .formInput .taskContent, body main .container #userAdd .formInput .pTask {
+  body main .container .taskForm .formInput input, body main .container .taskForm .formInput select, body main .container .taskForm .formInput textarea, body main .container .taskForm .formInput .taskContent, body main .container .taskForm .formInput .pTask, body main .container #userConnect .formInput input, body main .container #userConnect .formInput select, body main .container #userConnect .formInput textarea, body main .container #userConnect .formInput .taskContent, body main .container #userConnect .formInput .pTask, body main .container #userAdd .formInput input, body main .container #userAdd .formInput select, body main .container #userAdd .formInput textarea, body main .container #userAdd .formInput .taskContent, body main .container #userAdd .formInput .pTask, body main .container #forgotPassword .formInput input, body main .container #forgotPassword .formInput select, body main .container #forgotPassword .formInput textarea, body main .container #forgotPassword .formInput .taskContent, body main .container #forgotPassword .formInput .pTask {
     font-weight: 600;
     font-size: 16px;
   }
