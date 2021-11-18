@@ -72,21 +72,10 @@ body {
                 width: 240px;
                 margin: 45px; 
 
+                @include flexRowCenter;
                 a {
-                    background-color: $primary;                   
-                    display: block;
-                    width: 100%;
-                    height: 100%;
-                    color:white;
                     @include semiBold16;
-                    padding: 10px;
-                    border-radius: 12px;
-                    box-shadow: 0px 2px 4px $primaryShadow;
-                    &:hover {
-                        background-color: $secondary;
-                        color:$bgrey;
-                        box-shadow: 0px 2px 4px $secondaryShadow; 
-                    }
+                    width: 100%;
                 }
 
             }
@@ -329,7 +318,7 @@ body {
             #index {            
                 
                 .indexButton {
-    
+                    width: 320px;
                     a {
                         @include semiBold24;
                     }
