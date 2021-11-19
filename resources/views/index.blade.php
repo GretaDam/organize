@@ -1,5 +1,7 @@
 @extends('layout.app')
 
+@section('title','Accueil')
+
 @section('content')
 
     <main>

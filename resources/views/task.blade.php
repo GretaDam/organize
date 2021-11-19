@@ -1,21 +1,27 @@
 @extends('layout.app')
 
+@section('title','Visualiser une tâche')
+
 @section('content')
 
 <main>
 
     <div id="listTitle">
-        <p>Status de la tâche : {{$task->getCheckedString()}}</p>
+        <p>Tâche ref : {{$task->reference}}</p>
         <div class="listBar"></div>
     </div>
 
     <div class="container">
         <div class="taskForm"> 
+            
             <div class="formInput">
                 <p class="label">Titre :</p>
                 <p class="pTask">{{$task->title}}</p>
-                <p class="label">Référence :</p>
-                <p class="pTask">{{$task->reference}}</p>
+            </div>
+
+            <div class="formInput">
+                <p class="label">Statut :</p>
+                <p class="pTask">{{$task->getCheckedString()}}</p>
             </div>
 
             <div class="formInput">

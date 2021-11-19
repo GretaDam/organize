@@ -1,5 +1,7 @@
 @extends('layout.app')
 
+@section('title','Se connecter')
+
 @section('content')
 
 <main>

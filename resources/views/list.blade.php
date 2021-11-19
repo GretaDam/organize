@@ -1,5 +1,7 @@
 @extends('layout.app')
 
+@section('title','Liste des tâches')
+
 @section('content')
 
 <nav>

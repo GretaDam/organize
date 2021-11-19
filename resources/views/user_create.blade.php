@@ -1,5 +1,7 @@
 @extends('layout.app')
 
+@section('title','Création de compte')
+
 @section('content')
 
 <main>

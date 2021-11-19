@@ -1,5 +1,7 @@
 @extends('layout.app')
 
+@section('title','Modifier une tâche')
+
 @section('content')
 
 <main>
