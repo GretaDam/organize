@@ -1,0 +1,170 @@
+// Adaptation aux écrans type desktop
+@media screen and (min-width:768px) {
+    body {
+        width: 60%;       
+
+        header {
+            margin-top:10px;
+                .logo {
+                }
+    
+                .headBar {
+                }
+        }
+        
+        nav {
+            padding: 20px;
+
+            .navBtn {
+            }
+    
+            a {
+                @include semiBold16;
+            }
+            .addTask a{
+                
+            }
+            .logOut a{
+            }
+        }
+    
+        main {   
+            
+            #presentation {
+                h1 {
+                    @include black48;
+                }
+                p {
+                    @include semiBold24;
+                }
+            }
+
+            #index {            
+                
+                .indexButton {
+                    width: 320px;
+                    a {
+                        @include semiBold24;
+                    }
+                    
+                }
+            }
+            
+            #userTitle {
+                p {
+                    @include semiBold24;
+                    span {
+                        @include black24;
+                    }
+                }
+            }
+
+            #listTitle {
+                margin-top:30px;
+                p {
+                    @include semiBold16;
+                }
+
+            }
+
+            .listBar {   
+            }
+            
+            .navList {
+                li {
+                    a {
+                        @include semiBold16;
+                    }
+                }
+                
+            }
+
+            .check {}
+
+            .task {}
+
+            .priority {}
+
+            .endDate {
+                margin-right: 25px;
+            }
+
+            .container {
+                margin-top: 20px;
+                .alert {
+                }
+
+                .listLink {
+    
+                    .mainList {
+   
+                        li {
+                            img{width: 50px;}
+                            p {
+                                @include semiBold16;
+                            }
+                        }                
+                    }
+                }
+
+                .taskForm, #userConnect, #userAdd {
+                    @include semiBold16;
+                    width: 90%;
+                    
+                    .btn {@include semiBold16;}
+            
+                    .inputSubmit {                    
+                    }
+
+                    .inputButton, .formInput{
+                    }
+
+                    .inputButton {
+                    }
+
+                    .modalContent {
+                        @include semiBold16;
+                        left:calc(50% - 130px);
+                        width: 260px;
+                        padding: 25px 0;
+                    }
+
+                    .formInput {
+                        @include semiBold16;
+
+                        .label {}
+
+                        .labelCheck {
+                            width: 120px;
+                            height:38px;
+                        }
+                        
+                        .labelCheck:before {
+                            top:8px;
+                        }
+    
+                        .labelCheck:after {
+                            width:28px;
+                            height:28px;
+                        }
+    
+                        .box:checked + .labelCheck:after{
+                            transform: translateX(82px);
+                        }
+
+                        p {@include semiBold16;}
+
+                        input, select, textarea, .taskContent, .pTask {
+                            @include semiBold16;
+                        }
+                    }
+
+                    .area {
+                        textarea {
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

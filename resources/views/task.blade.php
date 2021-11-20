@@ -7,7 +7,7 @@
 <main>
 
     <div id="listTitle">
-        <p>Tâche ref : {{$task->reference}}</p>
+        <p>Tâche référence : {{$task->reference}}</p>
         <div class="listBar"></div>
     </div>
 
