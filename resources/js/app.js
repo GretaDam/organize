@@ -1,6 +1,3 @@
-require('./bootstrap');
-
-
 // Vérification formulaire de connexion
 const userConnect = document.getElementById("userConnect");
 const alertLog = document.getElementById("alertLog");
@@ -36,9 +33,7 @@ const linkDel =  document.getElementById('linkDel');
 
 valideForm(formDel,linkDel);
 
-
-// Mise en place Modal
-
+// Mise en place Modale
 const delModal = document.getElementById("delModal");
 const delBtn = document.getElementById("delBtn");
 const exitBtn = document.getElementById("exitBtn");
@@ -50,12 +45,6 @@ if (delModal) {
 
     exitBtn.onclick = function() {  
     delModal.style.display = "none";
-    }
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
-        delModal.style.display = "none";
-        }
     }
 }
 
