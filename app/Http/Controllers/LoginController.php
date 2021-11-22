@@ -27,7 +27,7 @@ class LoginController extends Controller
         }
 
         return back()->withErrors([
-            'auth' => 'Indentifiants non reconnus',
+            'auth' => 'Identifiants non reconnus',
         ]);
     }
 
