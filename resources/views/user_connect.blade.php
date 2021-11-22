@@ -26,9 +26,6 @@
             </div>
 
             <div id="alertLog">
-                @if ($errors->any())
-                    <p class="alert">{{ $errors->first('auth') }}</p>
-                @endif
             </div>
             
             <div class="inputSubmit">
