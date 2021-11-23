@@ -63,7 +63,7 @@
             @endif
 
             <div class="inputSubmit">
-                <button class="btn"><a href="{{route('editTask', $task->id)}}">Modifier</a></button>
+                <button class="btn"><a href="{{route('editTask', $task->reference)}}">Modifier</a></button>
                 <button id="delBtn" class="btn red">Supprimer</button>
                 <button class="btn"><a href="{{route ('list')}}">Annuler</a></button>
             </div>
@@ -72,7 +72,7 @@
                 <div class="modalContent">
                     
                     <p>Supprimer la tâche ?</p>
-                    <form id="formDel" action="{{route('delTask', $task->id)}}" method="POST">
+                    <form id="formDel" action="{{route('delTask', $task->reference)}}" method="POST">
                         @csrf
                     </form>
                     <p><a class="btn red" id="linkDel" href="">Oui</a>

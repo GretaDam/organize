@@ -12,7 +12,7 @@
     </div>
 
     <div class="container">
-        <form enctype="multipart/form-data" class="taskForm" method="POST" action="{{route('editTaskPost', $task->id)}}">
+        <form enctype="multipart/form-data" class="taskForm" method="POST" action="{{route('editTaskPost', $task->reference)}}">
         @csrf   
             <div class="formInput">
                 <label class="label" for="title">Titre :</label>
@@ -68,7 +68,7 @@
 
             <div class="inputSubmit">
                 <input class="btn" type="submit" value="Valider">
-                <button class="btn"><a href="{{route ('task', $task->id)}}">Annuler</a></button>
+                <button class="btn"><a href="{{route ('task', $task->reference)}}">Annuler</a></button>
             </div>
 
         </form>

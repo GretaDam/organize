@@ -67,12 +67,12 @@ class TaskController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $reference
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($reference)
     {
-        $task=Task::find($id);
+        $task=Task::where('reference',$reference)->get()->first();
 
         return view('task', compact('task'));
     }
@@ -80,12 +80,13 @@ class TaskController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $reference
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($reference)
     {
-        $task=Task::find($id);
+        $task=Task::where('reference',$reference)->get()->first();
+
         return view('edit_task', compact('task'));
     }
 
@@ -93,10 +94,10 @@ class TaskController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  int  $reference
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $reference)
     {
 
         $data = $request->validate([
@@ -110,12 +111,14 @@ class TaskController extends Controller
         ]);
 
         if ($request->image) {
-
+            $pathOrigine = public_path()."/image/";
+            if (!file_exists($pathOrigine)) {
+                mkdir($pathOrigine, 666, true);
+            }
             $data['image'] = Storage::disk('public')->put('image', $request->image);
-
         }
 
-        Task::whereId($id)->update($data);
+        Task::where('reference',$reference)->get()->first()->update($data);
 
         return redirect()->route('list');
     }
@@ -123,12 +126,12 @@ class TaskController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int  $reference
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($reference)
     {
-        $task=Task::find($id);
+        $task=Task::where('reference',$reference)->get()->first();
         $task->delete();
         
         return redirect()->route('list');

@@ -19,8 +19,7 @@
         </form>
         <a href="" id="linkLogout">
             <img class="navBtn" src="{{asset('assets/img/logOut.svg')}}" alt="se déconnecter">Déconnexion
-        </a>
-        
+        </a>        
     </div>
 
 </nav>
@@ -46,7 +45,7 @@
     <div class="container">
 
         @foreach (Auth::user()->tasks->sortByDesc('id') as $task)
-        <a class="listLink" href="{{route('task',$task->id)}}">
+        <a class="listLink" href="{{route('task',$task->reference)}}">
             <ul class ="mainList">
                 <li class="check"><p><img src="{{asset('assets/img/' . $task->getCheckedImg())}}" alt=""></p></li>
                 <li class="task"><p>{{ $task->title }}</p></li>
