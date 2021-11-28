@@ -53,6 +53,7 @@
 
             <div class="inputSubmit">
                 <input class="btn" type="submit" value="Créer mon compte">
+                <a class="btn" href="{{route('homepage')}}">Annuler</a> 
             </div>
 
         </form>

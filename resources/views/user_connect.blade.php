@@ -32,9 +32,9 @@
             </div>
             
             <div class="inputSubmit">
-                <input class="btn" type="submit" value="Se connecter">               
+                <input class="btn" type="submit" value="Se connecter">
+                <a class="btn" href="{{route('homepage')}}">Annuler</a>          
             </div>
-
         </form>      
 
     </div>

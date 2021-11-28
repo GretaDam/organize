@@ -65,7 +65,7 @@
             <div class="inputSubmit">
                 <button class="btn"><a href="{{route('editTask', $task->reference)}}">Modifier</a></button>
                 <button id="delBtn" class="btn red">Supprimer</button>
-                <button class="btn"><a href="{{route ('list')}}">Annuler</a></button>
+                <button class="btn"><a href="{{route ('list')}}">Retour</a></button>
             </div>
 
             <div id="delModal" class="modal">

@@ -15,14 +15,4 @@ class PageController extends Controller
     {
         return view('user_connect');
     }
-
-    public function userCreate()
-    {
-        return view('user_create');
-    }
-
-    public function task()
-    {
-        return view('task');
-    }
 }
